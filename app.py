@@ -11,7 +11,7 @@ text = st.text_area("Paste a news article or tweet")
 if st.button("Check"):
     if text.strip():
         # Replace this with your ngrok FastAPI URL
-        url = os.getenv("URL")
+        url = os.getenv("BACKEND-URL")
         res = requests.post(url, json={"text": text})
         if res.ok:
             out = res.json()
